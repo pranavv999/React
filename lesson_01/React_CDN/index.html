@@ -25,7 +25,7 @@
         const root = ReactDOM.createRoot(htmlRoot);
 
         // Creating basic React Element using createElement API
-        const headerElement = React.createElement("h1", {}, "Hello World from React");
+        const headerElement = React.createElement("h1", {id: "main"}, "Hello World from React");
         root.render(headerElement); 
 
         // Creating nested React Element which will accept another React Element as Child
@@ -53,7 +53,7 @@
     
     2. createElement accepts 3 parameters
         1. type               - must be a valid React component type (html element tag wrapped in string or React component)
-        2. props              - object or null. null equivalents to empty object. 
+        2. props              - object or null. null equivalents to empty object. we can add attributes to our tag in this object.
         3. children(optional) - Zero or moree child nodes.
                                 they can be React Nodes, including React elements, strings, numbers, portals, empty nodes (null, undefined, true, and false), and arrays of React nodes.
     
@@ -64,7 +64,8 @@
         {
             type: 'h1',
             props: {
-                children: 'Hello World from React'
+                children: 'Hello World from React',
+                id: "main"
             },
             key: null,
             ref: null,
