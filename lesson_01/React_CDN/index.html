@@ -39,6 +39,13 @@
         console.log(headerElement)
         root.render(React.createElement(Greeting, {name: "React"}));
 
+        // Children as arrays of React nodes
+        let names = ['pranav','raj', 'apeksha', 'dhamu']
+        let newNames = names.map((name,idx) => React.createElement("li", {key: `${idx}-${name}`}, name));
+        console.log(newNames) // Array of objects i.e. array od react elements
+        const reactNodes = React.createElement("ol", {}, newNames);
+        console.log(reactNodes);
+        root.render(reactNodes);
 
     </script>
 </body>
