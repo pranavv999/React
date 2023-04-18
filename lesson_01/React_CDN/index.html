@@ -1,6 +1,8 @@
 <!-- 
     This is reference page to React's createElement API
-    https://react.dev/reference/react/createElement#createelement
+        1] createElement : https://react.dev/reference/react/createElement#createelement
+        2] createRoot    : https://react.dev/reference/react-dom/client/createRoot
+        3] React Node    : https://www.reactenlightenment.com/react-nodes/4.1.html
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +40,7 @@
         }
         console.log(headerElement)
         root.render(React.createElement(Greeting, {name: "React"}));
+        root.render(Greeting({name :"pranav"})); // we can render Greeting component this way too
 
         // Children as arrays of React nodes
         let names = ['pranav','raj', 'apeksha', 'dhamu']
@@ -52,29 +55,38 @@
 </html>
 <!-- Notes -->
 <!-- 
-    1. React createElement API returns a React element object with a few properties.
-        a. type  - type we have passed
-        b. props - The props you have passed except for ref and key.
-        c. ref   - The ref you have passed. If missing, null.
-        d. key   - The key you have passed, coerced to a string. If missing, null.
-    
-    2. createElement accepts 3 parameters
-        1. type               - must be a valid React component type (html element tag wrapped in string or React component)
-        2. props              - object or null. null equivalents to empty object. we can add attributes to our tag in this object.
-        3. children(optional) - Zero or moree child nodes.
-                                they can be React Nodes, including React elements, strings, numbers, portals, empty nodes (null, undefined, true, and false), and arrays of React nodes.
-    
-    3. React Element :
-        - an element is a lightweight description of a piece of the user interface.
-        - Creating elements is extremely cheap so you don’t need to try to optimize or avoid it.
-        - the above headerElement return a React element which when logged looks like
-        {
-            type: 'h1',
-            props: {
-                children: 'Hello World from React',
-                id: "main"
-            },
-            key: null,
-            ref: null,
-        }
- -->
+    A] React.createElement : 
+        1. React createElement API returns a React element object with a few properties.
+            a. type  - type we have passed
+            b. props - The props you have passed except for ref and key.
+            c. ref   - The ref you have passed. If missing, null.
+            d. key   - The key you have passed, coerced to a string. If missing, null.
+        
+        2. createElement accepts 3 parameters
+            1. type               - must be a valid React component type (html element tag wrapped in string or React component)
+            2. props              - object or null. null equivalents to empty object. we can add attributes to our tag in this object.
+            3. children(optional) - Zero or moree child nodes.
+                                    they can be React Nodes, including React elements, strings, numbers, portals, empty nodes (null, undefined, true, and false), and arrays of React nodes.
+        
+        3. React Element :
+            - an element is a lightweight description of a piece of the user interface.
+            - Creating elements is extremely cheap so you don’t need to try to optimize or avoid it.
+            - the above headerElement return a React element which when logged looks like
+            {
+                type: 'h1',
+                props: {
+                    children: 'Hello World from React',
+                    id: "main"
+                },
+                key: null,
+                ref: null,
+            }
+
+    B] root.render(reactNode)
+        1. Call root.render to display a piece of JSX (“React node”) into the React root’s browser DOM node.
+        2. Parameters :
+            - reactNode : A React node that you want to display. This will usually be a piece of JSX like <App />, but you can also pass a React element constructed with createElement(), a string, a number, null, or undefined.
+        3. Returns :
+            - undefined
+        4. If you call render on the same root more than once, React will update the DOM as necessary to reflect the latest React Node you passed.
+ -->    
