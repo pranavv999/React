@@ -1,0 +1,72 @@
+<!-- 
+    This is reference page to React's createElement API
+    https://react.dev/reference/react/createElement#createelement
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Add React using CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        // in multiple instances of root.render
+        // the last instance will render on page
+
+        // creating html root element
+        const htmlRoot = document.getElementById("root");
+        // creating React Root Element
+        const root = ReactDOM.createRoot(htmlRoot);
+
+        // Creating basic React Element using createElement API
+        const headerElement = React.createElement("h1", {}, "Hello World from React");
+        root.render(headerElement); 
+
+        // Creating nested React Element which will accept another React Element as Child
+        const newComponent = React.createElement("div", {}, headerElement);
+        root.render(newComponent); 
+
+        // Creating a React Component and passing it as a type to another React Element
+        function Greeting({name}){
+            return React.createElement("h3", {}, "Hello ", React.createElement("i", {}, name));
+        }
+        console.log(headerElement)
+        root.render(React.createElement(Greeting, {name: "React"}));
+
+
+    </script>
+</body>
+</html>
+<!-- Notes -->
+<!-- 
+    1. React createElement API returns a React element object with a few properties.
+        a. type  - type we have passed
+        b. props - The props you have passed except for ref and key.
+        c. ref   - The ref you have passed. If missing, null.
+        d. key   - The key you have passed, coerced to a string. If missing, null.
+    
+    2. createElement accepts 3 parameters
+        1. type               - must be a valid React component type (html element tag wrapped in string or React component)
+        2. props              - object or null. null equivalents to empty object. 
+        3. children(optional) - Zero or moree child nodes.
+                                they can be React Nodes, including React elements, strings, numbers, portals, empty nodes (null, undefined, true, and false), and arrays of React nodes.
+    
+    3. React Element :
+        - an element is a lightweight description of a piece of the user interface.
+        - Creating elements is extremely cheap so you don’t need to try to optimize or avoid it.
+        - the above headerElement return a React element which when logged looks like
+        {
+            type: 'h1',
+            props: {
+                children: 'Hello World from React'
+            },
+            key: null,
+            ref: null,
+        }
+ -->

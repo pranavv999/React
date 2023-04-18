@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nmaste React</title>
+</head>
+<body>
+    <div id="root">
+        <!-- Using plain HTML -->
+        <h1>Hello World</h1>
+        <h2 id="sh"></h2>
+    </div>
+    <!-- Add HTML Using JavaScript -->
+    <script>
+        const root = document.getElementById("root")
+        const heading = document.createElement("h1")
+        heading.innerText = "Hello World from JavaScript"
+        root.appendChild(heading)
+        const subHeading = document.getElementById("sh")
+        subHeading.innerText = "Hello World from h2"
+    </script>
+
+</body>
+</html>
