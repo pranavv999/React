@@ -1,0 +1,19 @@
+{
+  "name": "igniting_app_parcel",
+  "version": "1.0.0",
+  "description": "Igniting app using Parcel",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranavv999/React.git"
+  },
+  "author": "Pranav Sonawane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranavv999/React/issues"
+  },
+  "homepage": "https://github.com/pranavv999/React#readme"
+}
