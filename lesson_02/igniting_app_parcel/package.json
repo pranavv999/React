@@ -2,7 +2,7 @@
   "name": "igniting_app_parcel",
   "version": "1.0.0",
   "description": "Igniting app using Parcel",
-  "main": "App.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html --port 4000 --open"
