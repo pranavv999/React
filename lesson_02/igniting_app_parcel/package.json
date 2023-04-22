@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html --port 4000 --open"
+    "start": "parcel index.html --port 4000 --open",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserslist" : [
+    "last 2 chrome version"
+  ]
 }
