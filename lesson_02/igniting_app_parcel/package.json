@@ -4,7 +4,8 @@
   "description": "Igniting app using Parcel",
   "main": "App.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html --port 4000 --open"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/pranavv999/React/issues"
   },
-  "homepage": "https://github.com/pranavv999/React#readme"
+  "homepage": "https://github.com/pranavv999/React#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
