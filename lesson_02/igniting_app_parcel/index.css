@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#heading {
+    color: rgb(255, 0, 0);
+    text-align: center;
+    font-size: 30px;
+    background-color: skyblue;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border-bottom: 4px solid rgb(13, 165, 226);
+}
